@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="LunchCheck">
+<head>
+  <meta charset="utf-8">
+  <title>LunchCheck</title>
+  <script
+    type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="app.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div class="container" ng-controller="LunchCheckController">
+    <div class="header">
+      <h1>Lunch Check!!!</h1>
+    </div>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">Enter what you ate for Lunch(comma-separated).</span>
+      <input
+        type="text"
+        class="form-control"
+        aria-describedby="sizing-addon1"
+        ng-model="lunchItems">
+    </div>
+    <div>
+      <button type="button" class="btn btn-warning pull-right" ng-click="checkLunch()">Check If Too Much</button>
+      <h3><span class="label label-info">I do NOT consider an empty item i.e., , , as an item towards to the count</span></h3>
+    </div>
+    <h2><span class="label label-default">{{checkVerdict}}</span></h2>
+  </div>
+</body>
+</html>
